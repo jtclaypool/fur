@@ -8,7 +8,7 @@ nw = $(shell which noweb)
 
 all : $(exe)
 $(exe): $(exe).go
-	CGO_CPPFLAGS="-I${CONDA_PREFIX}/include" go build -ldflags "${CONDA_PREFIX}/lib $(vf) $(df)"  $(exe).go
+	CGO_CPPFLAGS="-I${CONDA_PREFIX}/include -L${CONDA_PREFIX}/lib" go build -ldflags "$(vf) $(df)"  $(exe).go
 tangle: $(exe).go $(exe)_test.go
 $(exe).go: $(exe).org
 	if [ "$(nw)" != "" ]; then\
