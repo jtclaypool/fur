@@ -22,11 +22,16 @@ Then install the additional dependencies by running the script
 
 `bash scripts/setup.sh`
 
+Can also install from sources when using things like conda environments but you will still need to make sure system-level items like `make` and `autoconf` are installed
+
 Make the programs.
 
 `make`
 
 The directory `bin` now contains the binaries.
+
+These will need to be added to the `PATH` variable or path directly via copying to an active environment
+
 ## Docker Container
 As an alternative to building `fur`, we also post it as a [docker
   container](https://hub.docker.com/r/haubold/fox). The container
